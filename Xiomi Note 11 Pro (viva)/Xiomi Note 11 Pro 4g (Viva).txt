@@ -1,22 +1,50 @@
 Xiomi Note 11 Pro 4g (Viva)
 
-Consegir un recovery.img para Viva
-https://pixeldrain.com/api/file/tT94MR7y?download
 
-Instarlselo al cel
-fastboot flash recovery boot.img
-
-Sale error: FAILED (remote: 'This partition doesn't exist')
-
-probar código:
-fastboot getvar current-slot
-
-OUTPUT: "current-slot: b"
-
-Escribir: fastboot flash boot_b boot.img
+Metodo 1 : 
+	fastboot flash boot_b boot.img
+	# Importante que se llame boot.img
 
 
 
-NOTA: El archivo obligatoriamente se tiene que llama "boot.img"
-	En el twrpm se da en wipe, wipe advanced, todo menos USB STORE Y SD CARD, despues, revisa si dice successful en la parte de arriba
-	Despues sale de eso y ve a la parte de install, selecciona el archivo, y le da en install.
+	Consegir un recovery.img para Viva
+	https://pixeldrain.com/api/file/tT94MR7y?download
+	
+	Instarlselo al cel
+	fastboot flash recovery boot.img
+	
+	Sale error: FAILED (remote: 'This partition doesn't exist')
+	
+	probar código:
+	fastboot getvar current-slot
+	
+	OUTPUT: "current-slot: b"
+	
+	Escribir: fastboot flash boot_b boot.img
+	
+	
+	
+	NOTA: El archivo obligatoriamente se tiene que llama "boot.img"
+		En el twrpm se da en wipe, wipe advanced, todo menos USB STORE Y SD CARD, despues, revisa si dice successful en la parte de arriba
+		Despues sale de eso y ve a la parte de install, selecciona el archivo, y le da en install.
+
+
+
+
+Metodo 2: 
+
+	Descargar Platforms Tool: 
+	https://developer.android.com/tools/releases/platform-tools
+
+	Descargar el recovey y el sistema
+	Poner los 3 archivo en el escritorio
+	Abrir la carperta y ejecutar el cmd desde esa carpeta
+	Poner: Fastboot flash boot "Archivo boot.img"
+	Entrar en el recovery: fastboot reboot recovery
+	Entrar en advanvandced
+	Habilitad ADB
+	Poner: Adb sideload "Archivo Sistema", en el cmd
+	Despues de que en el cel salga 2/2
+ 	Precionar la fecha de atras
+	Reset Factory
+	Listo

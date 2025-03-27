@@ -2,7 +2,7 @@ Xiomi Note 11 Pro 4g (Viva)
 
 -Poner el celular en recovery
 -Instalar ADB
--Iniciar una terminal en win y escribir fastboot devices
+-Iniciar una terminal en donde estan los archivos y escribir fastboot devices
 
 Metodo 1 : 
 	fastboot flash boot_b boot.img
